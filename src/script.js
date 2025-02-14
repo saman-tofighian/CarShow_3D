@@ -191,4 +191,11 @@ const animation = () => {
   }
 };
 animation();
+window.addEventListener("resize", () => {
+  size = window.innerWidth;
+  size.height = window.innerHeight;
+  camera.aspect = size.width / size.height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(size.width, size.height);
+});
 // Saman Tofighian
